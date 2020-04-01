@@ -1,3 +1,4 @@
+
 - hosts: master
   become: yes
   tasks:
@@ -9,7 +10,7 @@
 
     - name: create .kube directory
       become: yes
-      become_user: ubuntu
+      become_user: adri
       file:
         path: $HOME/.kube
         state: directory
@@ -18,13 +19,13 @@
     - name: copy admin.conf to user's kube config
       copy:
         src: /etc/kubernetes/admin.conf
-        dest: /home/ubuntu/.kube/config
+        dest: /home/adri/.kube/config
         remote_src: yes
-        owner: ubuntu
+        owner: adri
 
     - name: install Pod network
       become: yes
-      become_user: ubuntu
+      become_user: adri
       shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml >> pod_network_setup.txt
       args:
         chdir: $HOME
