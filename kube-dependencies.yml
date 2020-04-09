@@ -41,4 +41,5 @@
      apt:
        name: kubectl=1.14.0-00
        state: present
-       force: yes
+       update_cache: true
+       #force: yes
