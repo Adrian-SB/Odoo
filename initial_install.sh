@@ -21,6 +21,7 @@ then
 	echo "CLAVE JENKINS"
 	echo "-----------------------"
 	cat /var/lib/jenkins/secrets/initialAdminPassword
+	echo "-----------------------"
 else
 	echo "Debes de ser root para poder ejecutar el script"
 fi
