@@ -17,6 +17,10 @@ then
 	sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 	apt -y update
 	apt -y install jenkins
+	echo "-----------------------"
+	echo "CLAVE JENKINS"
+	echo "-----------------------"
+	cat /var/lib/jenkins/secrets/initialAdminPassword
 else
 	echo "Debes de ser root para poder ejecutar el script"
 fi
