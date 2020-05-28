@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('ping') {
+    stage('Ping') {
       steps {
-        ansibleVault(action: 'ping', content: 'hosts')
-        ansiblePlaybook 'dependencies.yml'
+        sh '''ansible all -m ping
+'''
       }
     }
 
