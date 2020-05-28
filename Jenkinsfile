@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Initial Odoo') {
+      steps {
+        ansiblePlaybook(playbook: 'iniciar_docker.yml', colorized: true, becomeUser: 'all', inventory: 'hosts')
+      }
+    }
+
   }
 }
