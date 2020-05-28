@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Iniciar docker
+      shell: docker-compose up -d
+      
