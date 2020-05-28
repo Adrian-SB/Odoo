@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ping') {
       steps {
-        ansibleVault(action: 'ping', content: 'hosts', input: 'ping')
+        ansibleVault(action: 'ping', content: 'hosts')
         ansiblePlaybook 'dependencies.yml'
       }
     }
