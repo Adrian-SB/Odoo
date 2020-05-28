@@ -13,9 +13,9 @@ pipeline {
       }
     }
 
-    stage('Download Odoo') {
+    stage('Donwload Odoo') {
       steps {
-        sh 'docker pull odoo'
+        ansiblePlaybook(playbook: 'imagen.yml', colorized: true, becomeUser: 'all')
       }
     }
 
