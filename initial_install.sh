@@ -23,7 +23,7 @@ then
 	cat /var/lib/jenkins/secrets/initialAdminPassword
 	echo "-----------------------"
 	#echo "192.168.100.10 jenkins" >> /etc/hosts
-	echo "1" > /proc/sys/net/ipv4/ip_forward
+	#echo "1" > /proc/sys/net/ipv4/ip_forward
 else
 	echo "Debes de ser root para poder ejecutar el script"
 fi
