@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Download Odoo') {
+      steps {
+        sh 'docker pull odoo'
+      }
+    }
+
   }
 }
