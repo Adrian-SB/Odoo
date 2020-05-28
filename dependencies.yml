@@ -12,8 +12,3 @@
        name: docker-compose
        state: present
        update_cache: true
-       
-   - name: install APT Transport HTTPS
-     apt:
-       name: apt-transport-https
-       state: present
