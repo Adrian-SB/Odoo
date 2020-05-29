@@ -1,5 +1,9 @@
 - hosts: all
   become: yes
   tasks:
+    - name: Añadir yml
+        template:
+          src: docker-compose.yml
+          dest: /tmp/docker-compose.yml
     - name: Iniciar docker
-      shell: docker-compose -f docker-compose.yml up -d 
+      shell: docker-compose -f /tmp/docker-compose.yml up -d 
