@@ -21,7 +21,7 @@ pipeline {
 
     stage('Initial Odoo') {
       steps {
-        sh '''ansible all -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"
+        sh '''ansible all -i hosts -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"
 
  -f 5'''
       }
