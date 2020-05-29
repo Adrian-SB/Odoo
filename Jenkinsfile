@@ -21,8 +21,7 @@ pipeline {
 
     stage('Initial Odoo') {
       steps {
-        ansiblePlaybook(playbook: 'iniciar_docker.yml', colorized: true, becomeUser: 'all', inventory: 'hosts')
-        sh 'ansible atlanta -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"'
+        sh 'ansible all -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"'
       }
     }
 
