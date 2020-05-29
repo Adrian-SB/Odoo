@@ -2,4 +2,4 @@
   become: yes
   tasks:
     - name: Iniciar docker
-      shell: docker-compose up -d -f ./docker-compose.yml
+      shell: docker-compose -f ./docker-compose.yml up -d 
