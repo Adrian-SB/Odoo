@@ -3,7 +3,7 @@
   tasks:
     - name: copy yml
       copy:
-        src: docker-compose.yml
+        src: /var/lib/jenkins/workspace/docker-compose.yml
         dest: /tmp
         remote_src: yes
         owner: adri
