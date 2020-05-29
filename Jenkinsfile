@@ -22,6 +22,9 @@ pipeline {
     stage('Initial Odoo') {
       steps {
         ansiblePlaybook(playbook: 'iniciar_docker.yml', colorized: true, becomeUser: 'all', inventory: 'hosts')
+        sh '''ansible all -i hosts -a "docker-compose up -d" -f 5
+
+'''
       }
     }
 
