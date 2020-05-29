@@ -19,11 +19,17 @@ pipeline {
       }
     }
 
-    stage('Initial Odoo') {
+    stage('Enviar docker-compose') {
       steps {
         sh '''ansible all -i hosts -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"
 
 '''
+      }
+    }
+
+    stage('Iniciar Odoo') {
+      steps {
+        ansiblePlaybook(playbook: 'iniciar_docker.yml', colorized: true, becomeUser: 'all', installation: 'hosts')
       }
     }
 
