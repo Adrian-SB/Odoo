@@ -3,7 +3,7 @@
   tasks:
     - name: copy yml
       copy:
-        src: /var/lib/jenkins/workspace/Odoo_testing/docker-compose.yml
+        src: /home/adri/docker-compose.yml
         dest: /tmp
         remote_src: yes
         owner: adri
