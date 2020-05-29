@@ -1,10 +1,9 @@
 - hosts: all
   become: yes
   tasks:
-    - name: Copiar el docker-compose.yml
-  copy:
-    src: docker-compose.yml
-    dest: /tmp/docker-compose.yml
-    owner: adri
-    group: adri
-    mode: '0770'
+    - name: copy yml
+      copy:
+        src: docker-compose.yml
+        dest: /tmp
+        remote_src: yes
+        owner: adri
