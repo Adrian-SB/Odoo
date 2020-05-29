@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh '''ansible all -i hosts -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"
 
- -f 5'''
+'''
       }
     }
 
