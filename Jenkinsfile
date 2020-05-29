@@ -29,7 +29,7 @@ pipeline {
 
     stage('Iniciar Odoo') {
       steps {
-        ansiblePlaybook(playbook: 'iniciar_docker.yml', colorized: true, becomeUser: 'all', installation: 'hosts')
+        ansiblePlaybook(playbook: 'iniciar_docker.yml', colorized: true, becomeUser: 'all', inventory: 'hosts')
       }
     }
 
