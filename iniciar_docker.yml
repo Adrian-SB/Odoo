@@ -1,12 +1,5 @@
 - hosts: all
   become: yes
   tasks:
-    - name: Copiamos el fichero yml
-        copy:
-         src: docker-compose.yml
-         dest: /tmp/docker-compose.yml
-         owner: root
-         group: root
-         mode: '0770'
     - name: Iniciar docker
-      shell: docker-compose -f /tmp/docker-compose.yml up -d 
+      shell: docker-compose -f /var/lib/jenkins/workspace/Odoo_testing/docker-compose.yml up -d 
