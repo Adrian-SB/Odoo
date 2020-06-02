@@ -20,17 +20,12 @@ pipeline {
       }
     }
 
-    stage('Envio docker-compose y script') {
+    stage('Envio docker-compose') {
       steps {
         sh '''
 
 
-ansible all -i hosts -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"
-ansible all -i hosts -m copy -a "src=docker-compose.yml dest=/etc/docker/docker-compose.yml"
-ansible all -i hosts -m copy -a "src=script.sh dest=/etc/docker/script.sh"'''
-        sh '''ansible all -i hosts -a "sudo chmod -x /etc/docker/script.sh"
-ansible all -i hosts -a "sudo cp /etc/docker/script.sh /etc/init.d/"
-ansible all -i hosts -a "sudo update-rc.d script.sh defaults"'''
+ansible all -i hosts -m copy -a "src=docker-compose.yml dest=/tmp/docker-compose.yml"'''
       }
     }
 
