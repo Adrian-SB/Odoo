@@ -2,4 +2,4 @@
   become: yes
   tasks:
     - name: Iniciar Odoo
-      shell: docker-compose -f /tmp/docker-compose.yml up -d 
+      shell: docker-compose -f /etc/docker/docker-compose.yml up -d 
